@@ -18,27 +18,4 @@ describe('Hack Kanji BE - Login', function(){
             .should('be.visible') //kiem tra label ton tai
             .and('have.text','Mật khẩu') //kiem tra text lable password
     })
-    it ('validate password empty', function(){
-        cy.get(':nth-child(2) > .undefined').type('superadmin3'); //nhap vao textbox username: superadmin3
-        cy.get(':nth-child(3) > .undefined').type('{alt}'); //tro toi textbox password: khong nhap
-        cy.get('.mt-6 > .w-full').click(); //click vao button dang nhap
-         
-        cy.get('.text-red-600').should('have.text','*Yêu cầu mật khẩu') //kiem tra thong bao loi o textbox password
-    })
-    it ('validate username empty', function(){
-        cy.get(':nth-child(2) > .undefined').type('{alt}'); //tro toi textbox username: khong nhap
-        cy.get(':nth-child(3) > .undefined').type('Abc123!@#'); //nhap vao textbox password: Abc123!@#
-        cy.get('.mt-6 > .w-full').click(); //click vao button dang nhap
-         
-        cy.get('.text-red-600').should('have.text','*Yêu cầu tên đăng nhập') //kiem tra thong bao loi o textbox username
-    })
-    it ('validate username and password empty', function(){
-        cy.get(':nth-child(2) > .undefined').type('{alt}'); //tro toi textbox username: khong nhap
-        cy.get(':nth-child(3) > .undefined').type('{alt}'); //tro toi textbox password: khong nhap
-        cy.get('.mt-6 > .w-full').click(); //click vao button dang nhap
-         
-        cy.get(':nth-child(2) > .text-red-600').should('have.text','*Yêu cầu tên đăng nhập') //kiem tra thong bao loi o textbox username
-        cy.get(':nth-child(3) > .text-red-600').should('have.text','*Yêu cầu mật khẩu') //kiem tra thong bao loi o textbox password
-    })
-
 })
