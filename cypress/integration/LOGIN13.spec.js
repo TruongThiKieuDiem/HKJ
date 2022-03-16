@@ -1,5 +1,5 @@
 describe('LOGIN', ()=> {
-    it('Check if username invalid and password invalid', function(){
+    it('Check if username empty and password valid', function(){
         cy.visit('http://115.79.60.98:3000/login')
         cy.get(':nth-child(2) > .undefined').type('{alt}'); //khong nhap vao textbox username
         cy.get(':nth-child(3) > .undefined').type('123456'); //nhap vao textbox password
