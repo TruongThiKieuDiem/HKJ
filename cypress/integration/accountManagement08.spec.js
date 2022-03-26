@@ -20,12 +20,12 @@ describe('Account Administrator Management', () => {
 
         cy.get('.w-12').click()
     })
-    it('validate format email valid', function(){
-        cy.get(':nth-child(1) > .undefined').type('diem123');
-        cy.get(':nth-child(2) > .undefined').type('diem');
-        cy.get(':nth-child(3) > .undefined').type('diemdiem123@gmail.com');
-        cy.get(':nth-child(4) > .undefined').type('diemdiem');
-        cy.get('.rounded-tl-none').type('048563258');
+    it('validate username with 5 characters', function(){
+        cy.get(':nth-child(1) > .undefined').type('tieumy');
+        cy.get(':nth-child(2) > .undefined').type('123');
+        cy.get(':nth-child(3) > .undefined').type('tieumy123@gmail.com');
+        cy.get(':nth-child(4) > .undefined').type('tieum');
+        cy.get('.rounded-tl-none').type('03214854');
         cy.get('form > :nth-child(6) > .undefined').type('Test');
         cy.get('#headlessui-switch-28').click();
         cy.get('#headlessui-listbox-button-29 > .block').click();

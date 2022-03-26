@@ -20,12 +20,12 @@ describe('Account Administrator Management', () => {
 
         cy.get('.w-12').click()
     })
-    it('validate format email valid', function(){
-        cy.get(':nth-child(1) > .undefined').type('diem123');
-        cy.get(':nth-child(2) > .undefined').type('diem');
-        cy.get(':nth-child(3) > .undefined').type('diemdiem123@gmail.com');
-        cy.get(':nth-child(4) > .undefined').type('diemdiem');
-        cy.get('.rounded-tl-none').type('048563258');
+    it('validate email already exists', function(){
+        cy.get(':nth-child(1) > .undefined').type('test');
+        cy.get(':nth-child(2) > .undefined').type('2');
+        cy.get(':nth-child(3) > .undefined').type('truongdiem1006@gmail.com');
+        cy.get(':nth-child(4) > .undefined').type('test1');
+        cy.get('.rounded-tl-none').type('023447672');
         cy.get('form > :nth-child(6) > .undefined').type('Test');
         cy.get('#headlessui-switch-28').click();
         cy.get('#headlessui-listbox-button-29 > .block').click();
@@ -36,7 +36,7 @@ describe('Account Administrator Management', () => {
     })
     it ('Success Message', () => {
         const alert = cy.get('.Toastify')
-        const expectedAlert = 'Tạo thành công!'
+        const expectedAlert = 'Tạo mới tài khoản thất bại!'
         alert.should('contain.text', expectedAlert)
     });
 })
