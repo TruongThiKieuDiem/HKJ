@@ -20,13 +20,13 @@ describe('Account Administrator Management', () => {
 
         cy.get('.w-12').click()
     })
-    it('validate Ten is empty', function(){
-        cy.get(':nth-child(2) > .undefined').type('{alt}');
+    it('validate field phonenumber empty', function(){
+        cy.get('.rounded-tl-none').type('{alt}');
         cy.get('.px-8').click();
     })
     it ('Hightlight Error', () => {
-    const message = cy.get('.grid > :nth-child(2) > .text-red-600')
-    const invalidText = '*Yêu cầu Tên'
+    const message = cy.get('.flex-grow > .text-red-600')
+    const invalidText = '*Yêu cầu số điện thoại'
     message.should('have.text', invalidText)
     });
 })

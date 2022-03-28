@@ -20,14 +20,13 @@ describe('Account Administrator Management', () => {
 
         cy.get('.w-12').click()
     })
-    it('validate format email valid', function(){
-        cy.get(':nth-child(1) > .undefined').type('diem123');
-        cy.get(':nth-child(2) > .undefined').type('diem');
-        cy.get(':nth-child(3) > .undefined').type('diemdiem123@gmail.com');
-        cy.get(':nth-child(4) > .undefined').type('diemdiem');
-        cy.get('.rounded-tl-none').type('048563258');
+    it('check user create account admin success', function(){
+        cy.get(':nth-child(1) > .undefined').type('tuan12');
+        cy.get(':nth-child(2) > .undefined').type('hua');
+        cy.get(':nth-child(3) > .undefined').type('huatuan122@gmail.com');
+        cy.get(':nth-child(4) > .undefined').type('huatuan122');
+        cy.get('.rounded-tl-none').type('09836175111');
         cy.get('form > :nth-child(6) > .undefined').type('Test');
-        cy.get('#headlessui-switch-28').click();
         cy.get('#headlessui-listbox-button-29 > .block').click();
         cy.get('#headlessui-listbox-option-35 > .font-normal').click();
         cy.get(':nth-child(9) > .undefined').type('123456');
@@ -39,5 +38,17 @@ describe('Account Administrator Management', () => {
         const expectedAlert = 'Tạo thành công!'
         alert.should('contain.text', expectedAlert)
     });
-    it('Check user ')
+    it('user can log in with account', function(){
+        cy.get('#headlessui-menu-button-4 > .text-base').click();
+        cy.get('#headlessui-menu-button-4 > .ml-3').click();
+
+        cy.get(':nth-child(2) > .undefined').type('huatuan122');
+        cy.get(':nth-child(3) > .undefined').type('123456');
+        cy.get('.mt-6 > .w-full').click();
+    })
+    it ('Error Message', () => {
+        const alert = cy.get('.Toastify')
+        const expectedAlert = 'Tên đăng nhập hoặc mật khẩu không hợp lệ.'
+        alert.should('contain.text', expectedAlert)
+    });
 })

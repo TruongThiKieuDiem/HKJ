@@ -20,13 +20,13 @@ describe('Account Administrator Management', () => {
 
         cy.get('.w-12').click()
     })
-    it('validate all fields are empty', function(){
-        cy.get(':nth-child(1) > .undefined').type('{alt}');
+    it('validate field password empty', function(){
+        cy.get(':nth-child(9) > .undefined').type('{alt}');
         cy.get('.px-8').click();
     })
     it ('Hightlight Error', () => {
-    const message = cy.get(':nth-child(1) > .text-red-600')
-    const invalidText = '*Yêu cầu Họ'
+    const message = cy.get(':nth-child(9) > .text-red-600')
+    const invalidText = '*Yêu cầu mật khẩu'
     message.should('have.text', invalidText)
     });
 })
