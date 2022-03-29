@@ -21,11 +21,11 @@ describe('Account Administrator Management', () => {
         cy.get('.w-12').click()
     })
     it('check user create account admin success', function(){
-        cy.get(':nth-child(1) > .undefined').type('tuan12');
-        cy.get(':nth-child(2) > .undefined').type('hua');
-        cy.get(':nth-child(3) > .undefined').type('huatuan122@gmail.com');
-        cy.get(':nth-child(4) > .undefined').type('huatuan122');
-        cy.get('.rounded-tl-none').type('09836175111');
+        cy.get(':nth-child(1) > .undefined').type('diem_07');
+        cy.get(':nth-child(2) > .undefined').type('truong');
+        cy.get(':nth-child(3) > .undefined').type('diem_07@gmail.com');
+        cy.get(':nth-child(4) > .undefined').type('diemtruong_07');
+        cy.get('.rounded-tl-none').type('09836175128');
         cy.get('form > :nth-child(6) > .undefined').type('Test');
         cy.get('#headlessui-listbox-button-29 > .block').click();
         cy.get('#headlessui-listbox-option-35 > .font-normal').click();
@@ -39,10 +39,12 @@ describe('Account Administrator Management', () => {
         alert.should('contain.text', expectedAlert)
     });
     it('user can log in with account', function(){
-        cy.get('#headlessui-menu-button-4 > .text-base').click();
-        cy.get('#headlessui-menu-button-4 > .ml-3').click();
+        cy.get('#headlessui-menu-button-4').click();
+        cy.wait(1000)
+        cy.contains('Logout').click();
+        cy.wait(3000)
 
-        cy.get(':nth-child(2) > .undefined').type('huatuan122');
+        cy.get(':nth-child(2) > .undefined').type('diemtruong_07');
         cy.get(':nth-child(3) > .undefined').type('123456');
         cy.get('.mt-6 > .w-full').click();
     })
