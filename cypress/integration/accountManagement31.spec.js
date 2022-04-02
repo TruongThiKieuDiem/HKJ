@@ -3,13 +3,12 @@ describe('Account Administrator Management', () => {
         cy.LOGIN()
     })
     it('check user create account admin success', function(){
-        cy.get(':nth-child(1) > .undefined').type('kieudiem_011');
+        cy.get(':nth-child(1) > .undefined').type('kieudiem_08');
         cy.get(':nth-child(2) > .undefined').eq(0).type('truongthi');
-        cy.get(':nth-child(3) > .undefined').type('kieudiemtruongthi011@gmail.com');
-        cy.get(':nth-child(4) > .undefined').type('kieudiemtt_011');
-        cy.get('.rounded-tl-none').type('7418529678');
+        cy.get(':nth-child(3) > .undefined').type('kieudiemtruongthi08@gmail.com');
+        cy.get(':nth-child(4) > .undefined').type('kieudiemtt_08');
+        cy.get('.rounded-tl-none').type('09836175100');
         cy.get('form > :nth-child(6) > .undefined').type('Test');
-        cy.get('#headlessui-switch-28').click();
         cy.get('#headlessui-listbox-button-29 > .block').click();
         cy.get('#headlessui-listbox-option-35 > .font-normal').click();
         cy.get('.relative > .undefined').type('123456');
@@ -27,9 +26,13 @@ describe('Account Administrator Management', () => {
         cy.contains('Logout').click();
         cy.wait(3000)
 
-        cy.get('form > :nth-child(2) > .undefined').eq(0).type('kieudiemtt_011');
+        cy.get('form > :nth-child(2) > .undefined').eq(0).type('diemtruong_07');
         cy.get('.relative > .undefined').type('123456');
         cy.get('.mt-6 > .w-full').click();
-        cy.contains('Tổng quát').should('be.visible');
     })
+    it ('Error Message', () => {
+        const alert = cy.get('.Toastify')
+        const expectedAlert = 'Tên đăng nhập hoặc mật khẩu không hợp lệ.'
+        alert.should('contain.text', expectedAlert)
+    });
 })

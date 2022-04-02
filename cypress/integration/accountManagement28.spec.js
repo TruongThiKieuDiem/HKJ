@@ -12,10 +12,11 @@ describe('Account Administrator Management', () => {
         cy.get('#headlessui-switch-28').click();
         cy.get('#headlessui-listbox-button-29 > .block').click();
         cy.get('#headlessui-listbox-option-35 > .font-normal').click();
-        cy.get('.relative > .undefined').type('');
+        cy.get('.relative > .undefined').type('{alt}');
+        cy.get('form > :nth-child(9) > .text-gray-light').click();
     })
     it ('Hightlight Error', () => {
-    const message = cy.get(':nth-child(9) > .text-red-600')
+    const message = cy.get('.text-red-600')
     const invalidText = '*Yêu cầu mật khẩu'
     message.should('have.text', invalidText)
     });
