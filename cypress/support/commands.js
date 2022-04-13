@@ -20,3 +20,4 @@ Cypress.Commands.add("LOGIN", () => {
 
         cy.get('.w-12').click()
 })
+import 'cypress-file-upload';
