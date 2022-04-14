@@ -1,18 +1,23 @@
 describe('Account Administrator Management', () => {
+    beforeEach(function(){
+        cy.fixture('data_am09').then(function(data){
+          this.data = data
+        })
+    })
     it('LogIn', function(){
         cy.LOGIN()
     })
-    it('validate username with 7 characters', function(){
-        cy.get(':nth-child(1) > .undefined').type('kieudiem04');
-        cy.get('.grid > :nth-child(2) > .undefined').type('truongthi');
-        cy.get(':nth-child(3) > .undefined').type('kieudiemttkd04@gmail.com');
-        cy.get(':nth-child(4) > .undefined').type('kieudie');
-        cy.get('.rounded-tl-none').type('0987543204');
-        cy.get('form > :nth-child(6) > .undefined').type('Test');
+    it('validate username with 5 characters', function(){
+        cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
+        cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);
+        cy.get(':nth-child(3) > .undefined').type(this.data.email);
+        cy.get(':nth-child(4) > .undefined').type(this.data.userName);
+        cy.get('.rounded-tl-none').type(this.data.phoneNumber);
+        cy.get('form > :nth-child(6) > .undefined').type(this.data.department);
         cy.get('#headlessui-switch-28').click();
         cy.get('#headlessui-listbox-button-29 > .block').click();
         cy.get('#headlessui-listbox-option-35 > .font-normal').click();
-        cy.get('.relative > .undefined').type('123456');
+        cy.get('.relative > .undefined').type(this.data.passWord);
 
         cy.get('.px-8').click();
     })

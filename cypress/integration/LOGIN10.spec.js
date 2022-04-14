@@ -1,14 +1,17 @@
-describe('LOGIN', () => {
-    it('Check if username valid and password invalid: 5 characters', function(){
-    cy.visit('http://115.79.60.98:3000/login');
+describe('LOGIN', ()=> {
+    it('Check if username and password empty', function(){
+        cy.visit('http://115.79.60.98:3000/login')
+        cy.get('form > :nth-child(2) > .undefined').eq(0).type('{alt}'); //khong nhap vao textbox username
+        cy.get('.relative > .undefined').type('{alt}'); //khong nhap vao textbox password
 
-    cy.get('form > :nth-child(2) > .undefined').eq(0).type('superadmin2'); 
-    cy.get('.relative > .undefined').type('abc12'); 
-    cy.get('.mt-6 > .w-full').click();
+        cy.get('.mt-6 > .w-full').click(); //click vao button dang nhap
+        
+        const message1 = cy.get('form > :nth-child(2) > .text-red-600')
+        const invalidText1 = '*Yêu cầu tên đăng nhập'
+        message1.should('have.text', invalidText1)
 
-    const message = cy.get('.text-red-600')
-    const invalidText = '*Mật khẩu phải ít nhất 6 kí tự'
-
-    message.should('have.text', invalidText)
-})
-})
+        const message2 = cy.get('.relative > .text-red-600')
+        const invalidText2 = '*Yêu cầu mật khẩu'
+        message2.should('have.text', invalidText2)
+    });
+});

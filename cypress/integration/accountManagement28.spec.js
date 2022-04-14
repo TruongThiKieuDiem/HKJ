@@ -1,14 +1,19 @@
 describe('Account Administrator Management', () => {
+    beforeEach(function(){
+        cy.fixture('data_am28').then(function(data){
+          this.data = data
+        })
+    })
     it('LogIn', function(){
         cy.LOGIN()
     })
     it('validate field password empty', function(){
-        cy.get(':nth-child(1) > .undefined').type('diem05');
-        cy.get('.grid > :nth-child(2) > .undefined').type('truongthi');
-        cy.get(':nth-child(3) > .undefined').type('kieudiemtruongthi05@gmail.com');
-        cy.get(':nth-child(4) > .undefined').type('kieudiem05');
-        cy.get('.rounded-tl-none').type('0902358987');
-        cy.get('form > :nth-child(6) > .undefined').type('Test');
+        cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
+        cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);
+        cy.get(':nth-child(3) > .undefined').type(this.data.email);
+        cy.get(':nth-child(4) > .undefined').type(this.data.userName);
+        cy.get('.rounded-tl-none').type(this.data.phoneNumber);
+        cy.get('form > :nth-child(6) > .undefined').type(this.data.department);
         cy.get('#headlessui-switch-28').click();
         cy.get('#headlessui-listbox-button-29 > .block').click();
         cy.get('#headlessui-listbox-option-35 > .font-normal').click();
