@@ -1,6 +1,6 @@
 describe('Account Administrator Management', () => {
     beforeEach(function(){
-        cy.fixture('data_am30').then(function(data){
+        cy.fixture('data_am34').then(function(data){
           this.data = data
         })
     })

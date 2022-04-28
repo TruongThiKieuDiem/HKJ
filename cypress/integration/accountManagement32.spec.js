@@ -3,6 +3,7 @@ describe('Account Administrator Management', () => {
         cy.fixture('data_am32').then(function(data){
           this.data = data
         })
+    })
     it('LogIn', function(){
         cy.LOGIN()
     })
@@ -29,4 +30,3 @@ describe('Account Administrator Management', () => {
         alert.should('contain.text', expectedAlert)
     })
 })
-});
