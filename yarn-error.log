@@ -1,0 +1,41 @@
+Arguments: 
+  /usr/local/bin/node /Users/huetran/.yarn/bin/yarn.js
+
+PATH: 
+  /Users/huetran/.yarn/bin:/Users/huetran/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/huetran/.yarn/bin:/Users/huetran/.config/yarn/global/node_modules/.bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.13.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: read EADDRNOTAVAIL
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:220:20)
+
+npm manifest: 
+  {
+    "name": "hkj",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "cypress": "^9.5.3",
+      "cypress-file-upload": "^5.0.8"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

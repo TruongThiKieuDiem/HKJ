@@ -4,15 +4,15 @@ describe('Test Font Family - Font Size', () => {
     })
     it('Check font-family of title Đăng nhập button', () => {
         // check font-family
-        cy.contains('Đăng nhập').should('have.css', 'font-family', '"Poppins"')
+        cy.get('.mt-6 > .w-full').should('have.css', 'font-family', '"Poppins"')
     });
 
     it('Check font-size of title Đăng nhập button', () => {
         // check font-size
-        cy.contains('Đăng nhập').should('have.css','font-size', '15px')
+        cy.get('.mt-6 > .w-full').should('have.css','font-size', '15px')
     });
 
     it('Check color of title Đăng nhập textbox', () => {
-        cy.contains('Đăng nhập').should('have.css', 'color', 'rgb(255, 255, 255)')
+        cy.get('.mt-6 > .w-full').should('have.css', 'color', 'rgb(255, 255, 255)')
     });
 });
