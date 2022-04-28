@@ -8,10 +8,7 @@ describe('Account Administrator Management', () => {
         cy.LOGIN()
     })
     it('Upload image svg', function(){
-        it('svg', function(){
-            const avatar = 'cypress\fixtures\jpeg_1mb.jpeg';
-            cy.get('input[type=file]').attachFile(avatar);
-        })
+        cy.get('input[type=file]').attachFile('random_jpeg.jpeg')
         cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
         cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);
         cy.get(':nth-child(3) > .undefined').type(this.data.email);

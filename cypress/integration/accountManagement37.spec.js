@@ -1,14 +1,14 @@
 describe('Account Administrator Management', () => {
     beforeEach(function(){
-        cy.fixture('data_am31').then(function(data){
+        cy.fixture('data_am37').then(function(data){
           this.data = data
         })
     })
     it('LogIn', function(){
         cy.LOGIN()
     })
-    it('Upload image jpg', function(){
-        cy.get('input[type=file]').attachFile('random_JPG.jpg')
+    it('Upload image svg', function(){
+        cy.get('input[type=file]').attachFile('png_0MB.png')
         cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
         cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);
         cy.get(':nth-child(3) > .undefined').type(this.data.email);
@@ -21,9 +21,9 @@ describe('Account Administrator Management', () => {
 
         cy.get('.px-8').click();
     })
-    it ('Success Message', () => {
+    it ('Error Message', () => {
         const alert = cy.get('.Toastify')
         const expectedAlert = 'Tạo thành công!'
         alert.should('contain.text', expectedAlert)
-    });
+    })
 })

@@ -1,14 +1,13 @@
 describe('Account Administrator Management', () => {
     beforeEach(function(){
-        cy.fixture('data_am31').then(function(data){
+        cy.fixture('data_am30').then(function(data){
           this.data = data
         })
     })
     it('LogIn', function(){
         cy.LOGIN()
     })
-    it('Upload image jpg', function(){
-        cy.get('input[type=file]').attachFile('random_JPG.jpg')
+    it('check user create account admin success', function(){
         cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
         cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);
         cy.get(':nth-child(3) > .undefined').type(this.data.email);
@@ -26,4 +25,15 @@ describe('Account Administrator Management', () => {
         const expectedAlert = 'Tạo thành công!'
         alert.should('contain.text', expectedAlert)
     });
+    it('user can log in with account', function(){
+        cy.get('#headlessui-menu-button-4').click();
+        cy.wait(1000)
+        cy.contains('Logout').click();
+        cy.wait(3000)
+
+        cy.get('form > :nth-child(2) > .undefined').eq(0).type('kieudiemtt_011');
+        cy.get('.relative > .undefined').type('123456');
+        cy.get('.mt-6 > .w-full').click();
+        cy.contains('Tổng quát').should('be.visible');
+    })
 })
