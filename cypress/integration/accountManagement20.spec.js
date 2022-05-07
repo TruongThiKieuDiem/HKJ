@@ -7,7 +7,7 @@ describe('Account Administrator Management', () => {
     it('LogIn', function(){
         cy.LOGIN()
     })
-    it('validate field password empty', function(){
+    it('validate the Mật khẩu field with a length of 10', function(){
         cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
         cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);
         cy.get(':nth-child(3) > .undefined').type(this.data.email);

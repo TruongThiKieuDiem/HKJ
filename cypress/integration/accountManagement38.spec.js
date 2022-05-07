@@ -7,7 +7,7 @@ describe('Account Administrator Management', () => {
     it('LogIn', function(){
         cy.LOGIN()
     })
-    it('check user create account admin success', function(){
+    it('Check the account can log in to the BE when selecting the BE account activation', function(){
         cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
         cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);
         cy.get(':nth-child(3) > .undefined').type(this.data.email);

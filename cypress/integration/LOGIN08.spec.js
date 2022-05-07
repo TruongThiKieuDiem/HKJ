@@ -4,7 +4,7 @@ describe('LOGIN', () => {
           this.data = data
         })
       })
-    it('Check if username valid and password invalid: 5 characters', function(){
+    it('Check if the password with the length of 5 characters', function(){
     cy.visit('http://115.79.60.98:3000/login');
 
     cy.get('form > :nth-child(2) > .undefined').eq(0).type(this.data.Username); 

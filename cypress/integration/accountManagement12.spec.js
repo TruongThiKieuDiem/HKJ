@@ -7,7 +7,7 @@ describe('Account Administrator Management', () => {
     it('LogIn', function(){
         cy.LOGIN()
     })
-    it('validate field password empty', function(){
+    it('validate field password with special characters', function(){
         cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
         cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);
         cy.get(':nth-child(3) > .undefined').type(this.data.email);
@@ -21,7 +21,7 @@ describe('Account Administrator Management', () => {
     })
     it ('Hightlight Error', () => {
     const message = cy.get('.text-red-600')
-    const invalidText = '*Yêu cầu mật khẩu'
+    const invalidText = '*Mật khẩu không hợp lệ!'
     message.should('have.text', invalidText)
     });
 })

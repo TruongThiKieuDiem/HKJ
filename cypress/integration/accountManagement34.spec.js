@@ -7,7 +7,7 @@ describe('Account Administrator Management', () => {
     it('LogIn', function(){
         cy.LOGIN()
     })
-    it('Upload image svg', function(){
+    it('Upload image png 3MB', function(){
         cy.get('input[type=file]').attachFile('png_3MB.png')
         cy.get(':nth-child(1) > .undefined').type(this.data.firstName);
         cy.get('.grid > :nth-child(2) > .undefined').type(this.data.lastName);

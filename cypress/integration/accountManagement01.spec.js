@@ -1,5 +1,5 @@
 describe('Test Font Family - Font Size', () => {
-    it('LogIn', function(){
+    it('Account Administrator Management', function(){
         cy.LOGIN()
     })
     it('Check font-family of Thêm tài khoản title', () => {
