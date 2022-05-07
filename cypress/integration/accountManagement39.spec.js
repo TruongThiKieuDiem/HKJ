@@ -1,6 +1,6 @@
 describe('Account Administrator Management', () => {
     beforeEach(function(){
-        cy.fixture('data_am31').then(function(data){
+        cy.fixture('data_am39').then(function(data){
           this.data = data
         })
     })
@@ -13,6 +13,7 @@ describe('Account Administrator Management', () => {
         cy.get(':nth-child(3) > .undefined').type(this.data.email);
         cy.get(':nth-child(4) > .undefined').type(this.data.userName);
         cy.get('.rounded-tl-none').type(this.data.phoneNumber);
+        cy.get('form > :nth-child(6) > .undefined').type(this.data.department);
         cy.get('#headlessui-listbox-button-30 > .block').click();
         cy.get('#headlessui-listbox-option-37 > .font-normal').click();
         cy.get('.relative > .undefined').type(this.data.passWord);
@@ -30,7 +31,7 @@ describe('Account Administrator Management', () => {
         cy.contains('Logout').click();
         cy.wait(3000)
 
-        cy.get('form > :nth-child(2) > .undefined').eq(0).type('diemtruong_07');
+        cy.get('form > :nth-child(2) > .undefined').eq(0).type('Diemtruong11');
         cy.get('.relative > .undefined').type('123456');
         cy.get('.mt-6 > .w-full').click();
     })
