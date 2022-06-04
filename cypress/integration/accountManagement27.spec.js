@@ -1,6 +1,6 @@
 describe('Account Administrator Management', () => {
     beforeEach(function(){
-        cy.fixture('data_am26').then(function(data){
+        cy.fixture('data_am27').then(function(data){
           this.data = data
         })
     })
@@ -19,8 +19,8 @@ describe('Account Administrator Management', () => {
         cy.get('.relative > .undefined').type(this.data.passWord);
     })
     it ('Hightlight Error', () => {
-    const message = cy.get('.flex-grow > .text-red-600')
-    const invalidText = '*Yêu cầu số điện thoại'
+    const message = cy.get('.text-red-600.text-sm')
+    const invalidText = '*Yêu cầu phòng ban'
     message.should('have.text', invalidText)
     });
 })

@@ -25,13 +25,13 @@ describe('Account Administrator Management', () => {
         const expectedAlert = 'Tạo thành công!'
         alert.should('contain.text', expectedAlert)
     });
-    it('user can log in with account', function(){
+    it('user can not log in with account', function(){
         cy.get('#headlessui-menu-button-4').click();
         cy.wait(1000)
         cy.contains('Logout').click();
         cy.wait(3000)
 
-        cy.get('form > :nth-child(2) > .undefined').eq(0).type('Diemtruong11');
+        cy.get('form > :nth-child(2) > .undefined').eq(0).type('Dieuquynh54');
         cy.get('.relative > .undefined').type('123456');
         cy.get('.mt-6 > .w-full').click();
     })

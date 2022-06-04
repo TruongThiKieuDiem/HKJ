@@ -15,7 +15,7 @@ describe('Account Administrator Management', () => {
         cy.get('.rounded-tl-none').type(this.data.phoneNumber);
         cy.get('form > :nth-child(6) > .undefined').type(this.data.department);
         cy.get('#headlessui-listbox-button-30 > .block').click();
-        cy.get('#headlessui-listbox-option-37 > .font-normal').click();k();
+        cy.get('#headlessui-listbox-option-37 > .font-normal').click();
         cy.get('.relative > .undefined').type(this.data.passWord);
         cy.get('form > :nth-child(9) > .text-gray-light').click();
     })

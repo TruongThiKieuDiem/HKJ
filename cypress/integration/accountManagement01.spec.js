@@ -93,19 +93,6 @@ describe('Test Font Family - Font Size', () => {
     it('Check color of Phòng ban', () => {
         cy.contains('Phòng ban').should('have.css', 'color', 'rgb(138, 144, 153)')
     });
-    it('Check font-family of Kích hoạt tài khoản BE field title', () => {
-        // check font-family
-        cy.contains('Kích hoạt tài khoản BE').should('have.css', 'font-family', '"Poppins"')
-    });
-
-    it('Check font-size of Kích hoạt tài khoản BE field title', () => {
-        // check font-size
-        cy.contains('Kích hoạt tài khoản BE').should('have.css','font-size', '14px')
-    });
-
-    it('Check color of Kích hoạt tài khoản BE', () => {
-        cy.contains('Kích hoạt tài khoản BE').should('have.css', 'color', 'rgb(138, 144, 153)')
-    });
     it('Check font-family of Phân quyền field title', () => {
         // check font-family
         cy.contains('Phân quyền').should('have.css', 'font-family', '"Poppins"')

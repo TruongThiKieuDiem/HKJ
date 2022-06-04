@@ -23,7 +23,7 @@ describe('Account Administrator Management', () => {
     })
     it ('Error Message', () => {
         const alert = cy.get('.Toastify')
-        const expectedAlert = 'Tạo mới thành công'
+        const expectedAlert = 'Tạo thành công'
         alert.should('contain.text', expectedAlert)
     })
 })

@@ -12,7 +12,7 @@ describe('LOGIN', () => {
     cy.get('.mt-6 > .w-full').click();
 
     const message = cy.get('.text-red-600')
-    const invalidText = '*Tên đăng nhập phải có ít nhất 3 kí tự'
+    const invalidText = '*Tên đăng nhập phải ít nhất 3 kí tự'
 
     message.should('have.text', invalidText)
 })
